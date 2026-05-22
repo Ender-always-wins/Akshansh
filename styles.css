@@ -142,3 +142,29 @@ div.reasons-div{
 ul.reasons{
     font-size:20px;
 }
+
+div#projects-content{
+    margin-left:100px;
+    display:grid;
+    grid-template-columns:50% 50%;
+    max-width:1000px;
+}
+
+a.project{
+    width:400px;
+    background-color:rgb(255,255,255,0.6);
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    padding:5px;
+    padding-left:10px;
+    font-size:20px;
+}
+
+.projects-title{
+    margin-left:80px;
+    font-size:40px;
+    max-width:900px;
+}
