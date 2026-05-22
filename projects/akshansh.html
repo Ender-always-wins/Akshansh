@@ -8,10 +8,12 @@
     <link rel = "stylesheet" href = "/Akshansh/styles.css">
 </head>
 <body>
+    <div id = "main"></div>
     <script>
         fetch("https://akshansh-api.onrender.com/projects/Akshansh").then(res => res.text()).then(data => {
-            document.body.innerHTML = data.replaceAll("\n", "").replaceAll("\"", "");
+            document.getElementById("main").innerHTML = data.replaceAll("\n", "").replaceAll("\"", "");
         })
     </script>
+
 </body>
 </html>
