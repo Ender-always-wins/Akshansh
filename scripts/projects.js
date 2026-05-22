@@ -1,5 +1,5 @@
 async function projects() {
-   const response = await fetch("http://127.0.0.1:8000/projects");
+   const response = await fetch("http://akshansh-api.onrender.com/projects");
    const data = await response.text();
    const json = JSON.parse(data);
    console.log(data);
