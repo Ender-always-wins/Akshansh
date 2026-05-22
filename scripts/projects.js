@@ -7,7 +7,7 @@ async function projects() {
    for (const project in json){
       const projectDiv = document.createElement("a");
       projectDiv.classList.add("project");
-      projectDiv.href = `/projects/${project}.html`;
+      projectDiv.href = `Akshansh/projects/${project}.html`;
       projectDiv.style.textDecoration = "none";
       projectDiv.style.color = "black";
       const projectName = document.createElement("h2");
