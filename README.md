@@ -1,6 +1,4 @@
-<header>
-    Akshansh
-</header>
+<h1> Akshansh </h1>
 
 <p>
     This is my first website I made post JEE and purely in 
