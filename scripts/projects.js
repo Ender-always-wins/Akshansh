@@ -16,7 +16,7 @@ async function projects() {
          json[project] = json[project].substring(0, 100) + "...";
       }
       const projectDesc = document.createElement("p");
-      projectDesc.textContent = `${json[project]}`;
+      projectDesc.innerHTML = `${json[project]}`;
       projectDiv.appendChild(projectName);
       projectDiv.appendChild(projectDesc);
       projectContent.appendChild(projectDiv);
