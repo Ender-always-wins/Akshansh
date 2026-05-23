@@ -30,8 +30,8 @@
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let lastProject = "";
-                for (var key in namesJson){
-                    if (namesJson[key] == namesJson.length){
+                for (var key in namesJson.keys()){
+                    if (namesJson[key] == namesJson.keys().length){
                         lastProject = key;
                     }
                 }
@@ -43,7 +43,7 @@
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let previousProject = "";
-                for (var key in namesJson){
+                for (var key in namesJson.keys()){
                     if (namesJson[key] == projectIndex - 1){
                         previousProject = key;
                     }
@@ -58,11 +58,11 @@
             current.textContent = project;
             document.getElementById("nav-projects").appendChild(current);
 
-            if (projectIndex == namesJson.length) {
+            if (projectIndex == namesJson.keys().length) {
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let firstProject = "";
-                for (var key in namesJson){
+                for (var key in namesJson.keys()){
                     if (namesJson[key] == 1){
                         firstProject = key;
                     }
@@ -75,7 +75,7 @@
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let nextProject = "";
-                for (var key in namesJson){
+                for (var key in namesJson.keys()){
                     if (namesJson[key] == projectIndex + 1){
                         nextProject = key;
                     }
