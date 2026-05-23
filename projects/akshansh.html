@@ -9,6 +9,7 @@
 </head>
 <body>
     <div id = "main"></div>
+    <p class = "projects-para">hi</p>
     <script>
         fetch("https://akshansh-api.onrender.com/projects/Akshansh").then(res => res.text()).then(data => {
             document.getElementById("main").innerHTML = data.replaceAll("\"","");
