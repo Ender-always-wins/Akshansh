@@ -16,7 +16,7 @@ async function projects() {
          json[project] = json[project].substring(0, 100) + "...";
       }
       const projectDesc = document.createElement("p");
-      projectDesc.innerHTML = `${json[project].replace(`<h1> ${project} </h1>`, "")}`;
+      projectDesc.innerHTML = `${json[project].replace(`<h1 class = "projects-header"> ${project} </h1>`, "")}`;
       projectDiv.appendChild(projectName);
       projectDiv.appendChild(projectDesc);
       projectContent.appendChild(projectDiv);

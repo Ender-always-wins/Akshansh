@@ -168,3 +168,22 @@ a.project{
     font-size:40px;
     max-width:900px;
 }
+
+.projects-header{
+    margin-left:80px;
+    font-size: 4px;
+    max-width:900px;
+}
+
+.projects-para{
+    margin-left:100px;
+    font-size:20px;
+    max-width:900px;
+    background-color:rgb(255,255,255,0.6);
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+    padding:5px;
+}
