@@ -218,9 +218,10 @@ a.project{
     position:absolute;
     top: 5%;
     left: 5%;
-    font-size: 30px;
+    font-size: 40px;
     z-index:1;
-    color:#F2F0EF
+    color: #ffffff;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
 }
 
 #brown-strip{
@@ -231,6 +232,11 @@ a.project{
     height:100px;
     background-color:#453839;
     z-index: 1;
+    border-radius: 0px 0px 20px 20px;
+    -webkit-border-radius: 0px 0px 20px 20px;
+    -moz-border-radius: 0px 0px 20px 20px;
+    -ms-border-radius: 0px 0px 20px 20px;
+    -o-border-radius: 0px 0px 20px 20px;
 }
 
 #github-projects{
