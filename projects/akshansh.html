@@ -11,8 +11,8 @@
     <div id = "main"></div>
     <script>
         fetch("https://akshansh-api.onrender.com/projects/Akshansh").then(res => res.text()).then(data => {
-            document.getElementById("main").innerHTML = data;
-        })
+            document.getElementById("main").innerHTML = data.replaceAll("\"","");
+        });
     </script>
 
 </body>
