@@ -171,7 +171,7 @@ a.project{
 
 .\\projects-header\\{
     margin-left:80px;
-    font-size: 4px;
+    font-size: 40px;
     max-width:900px;
 }
 
@@ -185,5 +185,5 @@ a.project{
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
-    padding:5px;
+    padding:10px;
 }
