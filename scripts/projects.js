@@ -12,8 +12,8 @@ async function projects() {
       projectDiv.style.color = "black";
       const projectName = document.createElement("h2");
       projectName.textContent = project;
-      if (json[project].length > 100) {
-         json[project] = json[project].substring(0, 100) + "...";
+      if (json[project].length > 200) {
+         json[project] = json[project].substring(0, 200) + "...";
       }
       const projectDesc = document.createElement("p");
       projectDesc.innerHTML = `${json[project].replace(`<h1 class = "projects-header"> ${project} </h1>`, "")}`;
