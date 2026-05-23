@@ -22,10 +22,12 @@
             document.getElementById("main").innerHTML = data.replaceAll("\"","");
         });
         // add next and previous buttons
-        let names =fetch("https://akshansh-api.onrender.com/names");
-        let namesJson = JSON.parse(names);
-        let projectIndex = namesJson[project];
-
+        async function fetchNames(){
+            let names = await fetch("https://akshansh-api.onrender.com/names");
+            let namesJson = await names.json();
+            return namesJson[project];
+        }
+        let projectIndex = await fetchNames()
         if (projectIndex == 1){
             const newElement = document.createElement("a");
             newElement.classList.add("top-buttons");
