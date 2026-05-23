@@ -6,7 +6,9 @@ body{
 nav.top{
     max-width: none;
     display: flex;
-    background-image: linear-gradient(to right, #4d3e42, #4d3f3e)
+    background-image: linear-gradient(to right, #4d3e42, #4d3f3e);
+    position:sticky;
+    top:0
 }
 
 a.top-buttons{
