@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Akshansh</title>
+    <title></title>
     <link rel="icon" type="image/png" href="/Akshansh/images/coffee.png">
     <link rel = "stylesheet" href = "/Akshansh/styles.css">
 </head>
@@ -17,6 +17,7 @@
     <script>
         // fill the main div
         let params = new URLSearchParams(window.location.search);
+        document.getElementsByTagName("title")[0].textContent = params.get("project");
         let project = params.get("project");
         fetch(`https://akshansh-api.onrender.com/projects/${project}`).then(res => res.text()).then(data => {
             document.getElementById("main").innerHTML = data.replaceAll("\"","");
