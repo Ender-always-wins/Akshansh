@@ -24,7 +24,8 @@
         // add next and previous buttons
         async function addButtons(){
             let names = await fetch("https://akshansh-api.onrender.com/names");
-            let namesJson = await names.json();
+            let namesJsonPromise = await names.json();
+            let namesJson = JSON.parse(namesJsonPromise);
             let projectIndex= namesJson[project];
             if (projectIndex == 1){
                 const newElement = document.createElement("a");
