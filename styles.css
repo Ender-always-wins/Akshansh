@@ -202,19 +202,23 @@ a.project{
     height:400px;
     margin-left:50px;
     position:relative;
-    background-image: url("/Akshansh/images/stock editor.png");
+    background-image: url("/Akshansh/images/stock editor.jpg");
     border-radius:20px;
     -webkit-border-radius:20px;
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
+    text-decoration: none;
+    color:black;
+    z-index:0;
 }
 
 #name{
     position:absolute;
     top: 5%;
     left: 5%;
-    font: size 25px;
+    font-size: 25px;
+    z-index:1;
 }
 
 #brown-strip{
@@ -223,6 +227,7 @@ a.project{
     left:0%;
     height:100px;
     background-color:#453839;
+    z-index: 1;
 }
 
 #github-projects{
@@ -230,4 +235,5 @@ a.project{
     height:50px;
     bottom:75px;
     left: 75px;
+    z-index:2;
 }
