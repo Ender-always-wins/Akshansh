@@ -13,80 +13,93 @@
             Go back
         </a>
     </nav>
-    <div id = "main"></div>
-    <script>
-        // fill the main div
-        let params = new URLSearchParams(window.location.search);
-        document.getElementsByTagName("title")[0].textContent = params.get("project");
-        let project = params.get("project");
-        fetch(`https://akshansh-api.onrender.com/projects/${project}`).then(res => res.text()).then(data => {
-            document.getElementById("main").innerHTML = data.replaceAll("\"","");
-        });
-        // add next and previous buttons
-        async function addButtons(){
-            let names = await fetch("https://akshansh-api.onrender.com/names");
-            let namesJson = await names.json();
-            let projectIndex= namesJson[project];
-            if (projectIndex == 1){
-                const newElement = document.createElement("a");
-                newElement.classList.add("top-buttons");
-                let lastProject = "";
-                for (var key in namesJson){
-                    if (namesJson[key] == Object.keys(namesJson).length){
-                        lastProject = key;
+    <div style = "display:flex;">
+        <div id = "main"></div>
+        <script>
+            // fill the main div
+            let params = new URLSearchParams(window.location.search);
+            document.getElementsByTagName("title")[0].textContent = params.get("project");
+            let project = params.get("project");
+            fetch(`https://akshansh-api.onrender.com/projects/${project}`).then(res => res.text()).then(data => {
+                document.getElementById("main").innerHTML = data.replaceAll("\"","");
+            });
+            // add next and previous buttons
+            async function addButtons(){
+                let names = await fetch("https://akshansh-api.onrender.com/names");
+                let namesJson = await names.json();
+                let projectIndex= namesJson[project];
+                if (projectIndex == 1){
+                    const newElement = document.createElement("a");
+                    newElement.classList.add("top-buttons");
+                    let lastProject = "";
+                    for (var key in namesJson){
+                        if (namesJson[key] == Object.keys(namesJson).length){
+                            lastProject = key;
+                        }
                     }
+                    newElement.href = "/Akshansh/projects/index.html?project=" + lastProject;
+                    newElement.textContent = "Last";
+                    document.getElementById("nav-projects").appendChild(newElement);
                 }
-                newElement.href = "/Akshansh/projects/index.html?project=" + lastProject;
-                newElement.textContent = "Last";
-                document.getElementById("nav-projects").appendChild(newElement);
-            }
-            else {
-                const newElement = document.createElement("a");
-                newElement.classList.add("top-buttons");
-                let previousProject = "";
-                for (var key in namesJson){
-                    if (namesJson[key] == projectIndex - 1){
-                        previousProject = key;
+                else {
+                    const newElement = document.createElement("a");
+                    newElement.classList.add("top-buttons");
+                    let previousProject = "";
+                    for (var key in namesJson){
+                        if (namesJson[key] == projectIndex - 1){
+                            previousProject = key;
+                        }
                     }
+                    newElement.href = "/Akshansh/projects/index.html?project=" + previousProject;
+                    newElement.textContent = "Previous";
+                    document.getElementById("nav-projects").appendChild(newElement);
                 }
-                newElement.href = "/Akshansh/projects/index.html?project=" + previousProject;
-                newElement.textContent = "Previous";
-                document.getElementById("nav-projects").appendChild(newElement);
-            }
 
-            let current = document.createElement("a");
-            current.classList.add("top-buttons");
-            current.textContent = project;
-            document.getElementById("nav-projects").appendChild(current);
+                let current = document.createElement("a");
+                current.classList.add("top-buttons");
+                current.textContent = project;
+                document.getElementById("nav-projects").appendChild(current);
 
-            if (projectIndex == Object.keys(namesJson).length) {
-                const newElement = document.createElement("a");
-                newElement.classList.add("top-buttons");
-                let firstProject = "";
-                for (var key in namesJson){
-                    if (namesJson[key] == 1){
-                        firstProject = key;
+                if (projectIndex == Object.keys(namesJson).length) {
+                    const newElement = document.createElement("a");
+                    newElement.classList.add("top-buttons");
+                    let firstProject = "";
+                    for (var key in namesJson){
+                        if (namesJson[key] == 1){
+                            firstProject = key;
+                        }
                     }
+                    newElement.href = "/Akshansh/projects/index.html?project=" + firstProject;
+                    newElement.textContent = "First"
+                    document.getElementById("nav-projects").appendChild(newElement);
                 }
-                newElement.href = "/Akshansh/projects/index.html?project=" + firstProject;
-                newElement.textContent = "First"
-                document.getElementById("nav-projects").appendChild(newElement);
-            }
-            else {
-                const newElement = document.createElement("a");
-                newElement.classList.add("top-buttons");
-                let nextProject = "";
-                for (var key in namesJson){
-                    if (namesJson[key] == projectIndex + 1){
-                        nextProject = key;
+                else {
+                    const newElement = document.createElement("a");
+                    newElement.classList.add("top-buttons");
+                    let nextProject = "";
+                    for (var key in namesJson){
+                        if (namesJson[key] == projectIndex + 1){
+                            nextProject = key;
+                        }
                     }
+                    newElement.href = "/Akshansh/projects/index.html?project=" + nextProject;
+                    newElement.textContent = "Next"
+                    document.getElementById("nav-projects").appendChild(newElement);
                 }
-                newElement.href = "/Akshansh/projects/index.html?project=" + nextProject;
-                newElement.textContent = "Next"
-                document.getElementById("nav-projects").appendChild(newElement);
             }
-        }
-        addButtons();
-    </script>
+            addButtons();
+        </script>
+
+        <a id = "github-card">
+            <div id = "name">
+            </div>
+            <div id = "brown-strip"></div>
+            <img src = "/Akshansh/images/github.png" id = "github-projects">
+            <script>
+                document.getElementById("name").textContent = project;
+                document.getElementById("github-card").href = `https://github.com/Ender-always-wins/${project}`;
+            </script>
+        </a>
+    </div>
 </body>
 </html>

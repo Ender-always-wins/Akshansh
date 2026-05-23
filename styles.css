@@ -196,3 +196,38 @@ a.project{
     text-decoration: none;
     color: black;
 }
+
+#github-card{
+    width:400px;
+    height:400px;
+    margin-left:50px;
+    position:relative;
+    background-image: url("/Akshansh/images/stock editor.png");
+    border-radius:20px;
+    -webkit-border-radius:20px;
+    -moz-border-radius:20px;
+    -ms-border-radius:20px;
+    -o-border-radius:20px;
+}
+
+#name{
+    position:absolute;
+    top: 5%;
+    left: 5%;
+    font: size 25px;
+}
+
+#brown-strip{
+    position:absolute;
+    bottom:0%;
+    left:0%;
+    height:100px;
+    background-color:#453839;
+}
+
+#github-projects{
+    position: absolute;
+    height:50px;
+    bottom:75px;
+    left: 75px;
+}
