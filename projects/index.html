@@ -24,15 +24,14 @@
         // add next and previous buttons
         async function addButtons(){
             let names = await fetch("https://akshansh-api.onrender.com/names");
-            let namesJsonPromise = await names.json();
-            let namesJson = JSON.parse(namesJsonPromise);
+            let namesJson = await names.json();
             let projectIndex= namesJson[project];
             if (projectIndex == 1){
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let lastProject = "";
-                for (var key in namesJson.keys()){
-                    if (namesJson[key] == namesJson.keys().length){
+                for (var key in namesJson){
+                    if (namesJson[key] == Object.keys(namesJson).length){
                         lastProject = key;
                     }
                 }
@@ -44,7 +43,7 @@
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let previousProject = "";
-                for (var key in namesJson.keys()){
+                for (var key in namesJson){
                     if (namesJson[key] == projectIndex - 1){
                         previousProject = key;
                     }
@@ -59,11 +58,11 @@
             current.textContent = project;
             document.getElementById("nav-projects").appendChild(current);
 
-            if (projectIndex == namesJson.keys().length) {
+            if (projectIndex == Object.keys(namesJson).length) {
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let firstProject = "";
-                for (var key in namesJson.keys()){
+                for (var key in namesJson){
                     if (namesJson[key] == 1){
                         firstProject = key;
                     }
@@ -76,7 +75,7 @@
                 const newElement = document.createElement("a");
                 newElement.classList.add("top-buttons");
                 let nextProject = "";
-                for (var key in namesJson.keys()){
+                for (var key in namesJson){
                     if (namesJson[key] == projectIndex + 1){
                         nextProject = key;
                     }
