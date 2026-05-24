@@ -145,14 +145,14 @@ ul.reasons{
     font-size:20px;
 }
 
-div#projects-content{
+div#cards-content{
     margin-left:100px;
     display:grid;
     grid-template-columns:50% 50%;
     max-width:1000px;
 }
 
-a.project{
+a.card{
     width:400px;
     background-color:rgb(255,255,255,0.6);
     border-radius:20px;
@@ -165,7 +165,7 @@ a.project{
     font-size:20px;
 }
 
-.projects-title{
+.card-title{
     margin-left:80px;
     font-size:40px;
     max-width:900px;
