@@ -8,8 +8,8 @@
     <link rel = "stylesheet" href = "/Akshansh/styles.css">
 </head>
 <body>
-    <nav class = "top" id = "nav-blogs">
-        <a class = "top-buttons" id = "back" href = "/Akshansh/blog.html" style = "margin-right:100px;">
+    <nav class = "top" id = "nav">
+        <a class = "top-buttons" id = "back" style = "margin-right:100px;">
             Go back
         </a>
     </nav>
@@ -18,73 +18,75 @@
         <script>
             // fill the main div
             let params = new URLSearchParams(window.location.search);
-            document.getElementsByTagName("title")[0].textContent = params.get("blog");
-            let blog = params.get("blog");
-            fetch(`https://akshansh-api.onrender.com/blogs/${blog}`).then(res => res.text()).then(data => {
+            let type = params.get("type")
+            document.getElementsByTagName("title")[0].textContent = params.get("name");
+            document.getElementById("back").href = `/Akshansh/${type}.html`
+            let contentName = params.get("name");
+            fetch(`https://akshansh-api.onrender.com?type=${type}&name=${contentName}`).then(res => res.text()).then(data => {
                 document.getElementById("main").innerHTML = data.replaceAll("\"","");
             });
             // add next and previous buttons
             async function addButtons(){
-                let names = await fetch("https://akshansh-api.onrender.com/blog-names");
+                let names = await fetch("https://akshansh-api.onrender.com?type="+type+"names=true");
                 let namesJson = await names.json();
-                let blogIndex= namesJson[blog];
-                if (blogIndex == 1){
+                let index= namesJson[contentName];
+                if (index == 1){
                     const newElement = document.createElement("a");
                     newElement.classList.add("top-buttons");
-                    let lastBlog = "";
+                    let lastContent = "";
                     for (var key in namesJson){
                         if (namesJson[key] == Object.keys(namesJson).length){
-                            lastBlog = key;
+                            lastContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/blogs/index.html?blog=" + lastBlog;
+                    newElement.href = "/Akshansh/content/index.html?"+type+"="+lastContent;
                     newElement.textContent = "Last";
-                    document.getElementById("nav-blogs").appendChild(newElement);
+                    document.getElementById("nav").appendChild(newElement);
                 }
                 else {
                     const newElement = document.createElement("a");
                     newElement.classList.add("top-buttons");
-                    let previousBlog = "";
+                    let previousContent = "";
                     for (var key in namesJson){
-                        if (namesJson[key] == blogIndex - 1){
-                            previousBlog = key;
+                        if (namesJson[key] == index - 1){
+                            previousContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/blogs/index.html?blog=" + previousBlog;
+                    newElement.href = "/Akshansh/content/index.html?"+type+"=" + previousContent;
                     newElement.textContent = "Previous";
-                    document.getElementById("nav-blogs").appendChild(newElement);
+                    document.getElementById("nav").appendChild(newElement);
                 }
 
                 let current = document.createElement("a");
                 current.classList.add("top-buttons");
-                current.textContent = blog;
-                document.getElementById("nav-blogs").appendChild(current);
+                current.textContent = contentName;
+                document.getElementById("nav").appendChild(current);
 
-                if (blogIndex == Object.keys(namesJson).length) {
+                if (index == Object.keys(namesJson).length) {
                     const newElement = document.createElement("a");
                     newElement.classList.add("top-buttons");
-                    let firstBlog = "";
+                    let firstContent = "";
                     for (var key in namesJson){
                         if (namesJson[key] == 1){
-                            firstBlog = key;
+                            firstContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/blogs/index.html?blog=" + firstBlog;
+                    newElement.href = "/Akshansh/content/index.html?"+type+"=" + firstContent;
                     newElement.textContent = "First"
-                    document.getElementById("nav-blogs").appendChild(newElement);
+                    document.getElementById("nav").appendChild(newElement);
                 }
                 else {
                     const newElement = document.createElement("a");
                     newElement.classList.add("top-buttons");
-                    let nextBlog = "";
+                    let nextContent = "";
                     for (var key in namesJson){
-                        if (namesJson[key] == blogIndex + 1){
-                            nextBlog = key;
+                        if (namesJson[key] == index + 1){
+                            nextContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/blogs/index.html?blog=" + nextBlog;
+                    newElement.href = "/Akshansh/content/index.html?"+type+"=" + nextContent;
                     newElement.textContent = "Next"
-                    document.getElementById("nav-blogs").appendChild(newElement);
+                    document.getElementById("nav").appendChild(newElement);
                 }
             }
             addButtons();
