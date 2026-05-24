@@ -7,17 +7,14 @@ async function populateCard(type) {
    for (const card in json){
       const cardDiv = document.createElement("a");
       cardDiv.classList.add("card");
-      cardDiv.href = `/Akshansh/${type}/index.html?${type}=${card}`;
+      cardDiv.href = `/Akshansh/${type}/index.html?${type.slice(0,-2)}=${card}`;
       cardDiv.style.textDecoration = "none";
       cardDiv.style.color = "black";
-      const cardName = document.createElement("h2");
-      cardName.textContent = card;
       if (json[card].length > 200) {
          json[card] = json[card].substring(0, 200) + "...";
       }
       const cardDesc = document.createElement("p");
-      cardDesc.innerHTML = `${json[card].replace(`<h1 class = "cards-header"> ${card} </h1>`, "")}`;
-      cardDiv.appendChild(cardName);
+      cardDesc.innerHTML = `${json[card]}`;
       cardDiv.appendChild(cardDesc);
       cardContent.appendChild(cardDiv);
    }
