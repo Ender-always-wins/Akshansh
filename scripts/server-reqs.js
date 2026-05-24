@@ -7,7 +7,7 @@ async function populateCard(type) {
    for (const card in json){
       const cardDiv = document.createElement("a");
       cardDiv.classList.add("card");
-      cardDiv.href = `/Akshansh/${type}/index.html?${type.slice(0,-2)}=${card}`;
+      cardDiv.href = `/Akshansh/${type}/index.html?${type.slice(0,-1)}=${card}`;
       cardDiv.style.textDecoration = "none";
       cardDiv.style.color = "black";
       if (json[card].length > 200) {
