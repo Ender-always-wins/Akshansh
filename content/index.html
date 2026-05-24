@@ -39,7 +39,7 @@
                             lastContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/content/index.html?"+type+"="+lastContent;
+                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name="+lastContent;
                     newElement.textContent = "Last";
                     document.getElementById("nav").appendChild(newElement);
                 }
@@ -52,7 +52,7 @@
                             previousContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/content/index.html?"+type+"=" + previousContent;
+                    newElement.href = "/Akshansh/content/index.html?type="+type+"name=" + previousContent;
                     newElement.textContent = "Previous";
                     document.getElementById("nav").appendChild(newElement);
                 }
@@ -71,7 +71,7 @@
                             firstContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/content/index.html?"+type+"=" + firstContent;
+                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + firstContent;
                     newElement.textContent = "First";
                     document.getElementById("nav").appendChild(newElement);
                 }
@@ -84,7 +84,7 @@
                             nextContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/content/index.html?"+type+"=" + nextContent;
+                    newElement.href = "/Akshansh/content/index.html?type="+type+"name=" + nextContent;
                     newElement.textContent = "Next";
                     document.getElementById("nav").appendChild(newElement);
                 }
