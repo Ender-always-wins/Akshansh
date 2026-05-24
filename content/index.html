@@ -13,7 +13,7 @@
             Go back
         </a>
     </nav>
-    <div style = "display:flex;">
+    <div id = "parent" style = "display:flex;">
         <div id = "main"></div>
         <script>
             // fill the main div
@@ -27,7 +27,7 @@
             });
             // add next and previous buttons
             async function addButtons(){
-                let names = await fetch("https://akshansh-api.onrender.com?type="+type+"names=true");
+                let names = await fetch("https://akshansh-api.onrender.com?type="+type+"&names=true");
                 let namesJson = await names.json();
                 let index= namesJson[contentName];
                 if (index == 1){
@@ -72,7 +72,7 @@
                         }
                     }
                     newElement.href = "/Akshansh/content/index.html?"+type+"=" + firstContent;
-                    newElement.textContent = "First"
+                    newElement.textContent = "First";
                     document.getElementById("nav").appendChild(newElement);
                 }
                 else {
@@ -85,11 +85,31 @@
                         }
                     }
                     newElement.href = "/Akshansh/content/index.html?"+type+"=" + nextContent;
-                    newElement.textContent = "Next"
+                    newElement.textContent = "Next";
                     document.getElementById("nav").appendChild(newElement);
                 }
             }
             addButtons();
+        </script>
+        <script>
+            if (type=="projects"){
+                let githubCard = document.createElement("a");
+                githubCard.id = "github-card";
+                githubCard.href = "https://github.com/Ender-always-wins/"+contentName
+                let projectName = document.createElement("div");
+                projectName.id = "name";
+                projectName.textContent = contentName
+                let brownStrip = document.createElement("div");
+                brownStrip.id = "brown-strip";
+                let img = document.createElement("img");
+                img.id = "github-projects";
+                img.src = "/Akshansh/images/github.png"
+                githubCard.appendChild(projectName)
+                githubCard.appendChild(brownStrip)
+                githubCard.appendChild(img)
+                document.getElementById("parent").appendChild(githubCard)
+
+            }
         </script>
     </div>
 </body>
