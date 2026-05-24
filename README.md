@@ -12,7 +12,7 @@
     I have dabbled a bit into flet earlier but I wanted to make a website 
     using the most basic tools possible, The backend has been written in python 
     using fastapi and the frontend is in vanilla html css and js. 
-    I do realize I didn't need a backend for this website, but i chose to have one 
+    I do realize I didn't need a backend for this website, but I chose to have one 
     anyways in order to learn about the fetch API of js!
 </p>
 
