@@ -52,7 +52,7 @@
                             previousContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/content/index.html?type="+type+"name=" + previousContent;
+                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + previousContent;
                     newElement.textContent = "Previous";
                     document.getElementById("nav").appendChild(newElement);
                 }
@@ -84,7 +84,7 @@
                             nextContent = key;
                         }
                     }
-                    newElement.href = "/Akshansh/content/index.html?type="+type+"name=" + nextContent;
+                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + nextContent;
                     newElement.textContent = "Next";
                     document.getElementById("nav").appendChild(newElement);
                 }
