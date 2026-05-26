@@ -1,3 +1,5 @@
+console.log("worked")
+
 document.addEventListener("DOMContentLoaded", ()=>{const options = {
   root: document.querySelector(".content-div"),
   rootMargin: "0px",
