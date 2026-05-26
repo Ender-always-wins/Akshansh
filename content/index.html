@@ -23,11 +23,10 @@
             document.getElementsByTagName("title")[0].textContent = params.get("name");
             document.getElementById("back").href = `/Akshansh/${type}.html`
             let contentName = params.get("name");
-            fetch(`https://akshansh-api.onrender.com?type=${type}&name=${contentName}`).then(res => res.text()).then(data => {
-                document.getElementById("main").innerHTML = data.replaceAll("\"","");
-            });
-            // add next and previous buttons
             async function addButtons(){
+                let res = await fetch(`https://akshansh-api.onrender.com?type=${type}&name=${contentName}`)
+                let data = await res.text()
+                document.getElementById("main").innerHTML = data.replaceAll("\"","");
                 let names = await fetch("https://akshansh-api.onrender.com?type="+type+"&names=true");
                 let namesJson = await names.json();
                 let index= namesJson[contentName];
