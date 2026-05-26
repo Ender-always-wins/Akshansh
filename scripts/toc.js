@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", ()=>{const options = {
   scrollMargin: "0px",
   threshold: 0.01,
 };
-
+console.log("dom loaded")
 let headingsListItemArray = []
 
 const headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6")
