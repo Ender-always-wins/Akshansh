@@ -7,7 +7,7 @@ function addToc(){const options = {
 let headingsListItemArray = []
 
 const headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6")
-for (let i in Array.from({length:headings.length}, (_,i)=>i)){
+for (let i of Array.from({length:headings.length}, (_,i)=>i)){
     let heading = headings[i].textContent
     if (heading.length>20){
         heading = heading.slice(0,20)
@@ -24,7 +24,7 @@ for (let i in Array.from({length:headings.length}, (_,i)=>i)){
 
 const observer = new IntersectionObserver(func, options);
 let sections = document.getElementsByClassName("hi");
-for (let i in Array.from({length:headings.length}, (_,i)=>i)){observer.observe(sections[i])};
+for (let i of Array.from({length:headings.length}, (_,i)=>i)){observer.observe(sections[i])};
 
 let headingsOnScreen = [];
 let headingElementsArray = [...headings]
