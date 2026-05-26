@@ -15,7 +15,8 @@
     </nav>
     <div id = "parent" style = "display:flex;">
         <div id = "main"></div>
-        <script>
+            <script src = "/Akshansh/scripts/toc.js"></script>
+            <script>
             // fill the main div
             let params = new URLSearchParams(window.location.search);
             let type = params.get("type")
@@ -88,6 +89,9 @@
                     newElement.textContent = "Next";
                     document.getElementById("nav").appendChild(newElement);
                 }
+                if (type == projects){
+                    addToc()
+                }
             }
             addButtons();
         </script>
@@ -110,10 +114,8 @@
                 document.getElementById("parent").appendChild(githubCard)
 
             }
-            else if (type == "blogs" || type =="writeups"){
-                import("/Akshansh/scripts/toc.js")
-            }
         </script>
+        
     </div>
 </body>
 </html>

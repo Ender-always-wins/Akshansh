@@ -1,10 +1,9 @@
-const options = {
-  root: document.querySelector(".content-div"),
+function addToc(){const options = {
+  root: document.querySelector("#content-div"),
   rootMargin: "0px",
   scrollMargin: "0px",
   threshold: 0.01,
 };
-console.log("dom loaded")
 let headingsListItemArray = []
 
 const headings = document.querySelectorAll("h1,h2,h3,h4,h5,h6")
@@ -25,7 +24,7 @@ for (let i in Array.from({length:headings.length}, (_,i)=>i)){
 
 const observer = new IntersectionObserver(func, options);
 let sections = document.getElementsByClassName("hi");
-for (i in Array.from({length:headings.length}, (_,i)=>i)){observer.observe(sections[i])};
+for (let i in Array.from({length:headings.length}, (_,i)=>i)){observer.observe(sections[i])};
 
 let headingsOnScreen = [];
 let headingElementsArray = [...headings]
@@ -57,6 +56,4 @@ function func(elements, observer){
             toc.append(headingsListItemArray[headingIndex+i])
         }
     }
-}
-
-console.log(headingsOnScreen)
+}}
