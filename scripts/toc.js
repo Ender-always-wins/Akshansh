@@ -56,4 +56,6 @@ function func(elements, observer){
             toc.append(headingsListItemArray[headingIndex+i])
         }
     }
-}}
+}
+console.log(sections, headings,headingElementsArray)
+}
