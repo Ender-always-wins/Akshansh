@@ -1,5 +1,5 @@
 function addToc(){const options = {
-  root: document.querySelector("#content-div"),
+  root: null,
   rootMargin: "0px",
   scrollMargin: "0px",
   threshold: 0.01,
@@ -30,10 +30,12 @@ let headingsOnScreen = [];
 let headingElementsArray = [...headings]
 
 function func(elements, observer){
-    console.log("hi")
     elements.forEach(
         element => {
-            var heading = element.target.children[0];
+            for (let child of element.target.children){
+                if (child.tagName == "h1"||child.tagName =="h2"){var heading = child;break}
+            }
+            if (heading !== undefined || heading !== null){
             if (headingsOnScreen.includes(heading) && !element.isIntersecting){
             headingsOnScreen = headingsOnScreen.filter(elem => elem !== heading)
             }
@@ -46,7 +48,7 @@ function func(elements, observer){
                 else{
                     headingsOnScreen.push(heading)
                 }
-            }
+            }}
         }
     )
     let headingIndex = headingElementsArray.indexOf(headingsOnScreen[0]);
