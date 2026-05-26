@@ -8,7 +8,8 @@ nav.top{
     display: flex;
     background-image: linear-gradient(to right, #4d3e42, #4d3f3e);
     position:sticky;
-    top:0
+    top:0;
+    z-index:100;
 }
 
 a.top-buttons{
