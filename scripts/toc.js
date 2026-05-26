@@ -30,6 +30,7 @@ let headingsOnScreen = [];
 let headingElementsArray = [...headings]
 
 function func(elements, observer){
+    console.log("hi")
     elements.forEach(
         element => {
             var heading = element.target.children[0];
