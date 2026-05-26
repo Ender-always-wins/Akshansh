@@ -1,6 +1,4 @@
-console.log("worked")
-
-document.addEventListener("DOMContentLoaded", ()=>{const options = {
+const options = {
   root: document.querySelector(".content-div"),
   rootMargin: "0px",
   scrollMargin: "0px",
@@ -59,4 +57,6 @@ function func(elements, observer){
             toc.append(headingsListItemArray[headingIndex+i])
         }
     }
-}})
+}
+
+console.log(headingsOnScreen)
