@@ -15,7 +15,6 @@
     </nav>
     <div id = "parent" style = "display:flex;">
         <div id = "main"></div>
-            <script src = "/Akshansh/scripts/toc.js"></script>
             <script>
             // fill the main div
             let params = new URLSearchParams(window.location.search);
@@ -87,9 +86,6 @@
                     newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + nextContent;
                     newElement.textContent = "Next";
                     document.getElementById("nav").appendChild(newElement);
-                }
-                if (type == "blogs" || type == "writeups"){
-                    addToc()
                 }
             }
             addButtons();
