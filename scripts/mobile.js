@@ -8,16 +8,13 @@ function fixNav(page){
         if (page === "contact"){document.getElementById("contact").style.display = "block";}
     }
 }
-function showMore(){
+function showMore(page){
     document.getElementsByClassName("top")[0].style.display="block"
     for (element of document.getElementsByClassName("top-buttons")){
         element.style.display="block"
-        if (element.style.backgroundColor === "#453839"){let page = element.id}
     }
     document.getElementById("menu").textContent = "-"
-    console.log(page)
     document.getElementById("menu").setAttribute("onclick", `showLess("${page}")`)
-    console.log(document.getElementById("menu").getAttribute("onclick"))
 }
 
 function showLess(page){
@@ -25,7 +22,6 @@ function showLess(page){
     for (element of document.getElementsByClassName("top-buttons")){
         element.style.display="none"
     }
-    console.log(document.getElementById(page))
     document.getElementById(page).style.display= "block"
     document.getElementById("menu").textContent = "+"
     document.getElementById("menu").setAttribute("onclick", `showMore("${page}")`)
