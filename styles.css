@@ -250,3 +250,23 @@ a.card{
     left: 75px;
     z-index:2;
 }
+
+#menu{
+    display:none;
+}
+
+@media screen and (max-width:800px){
+    p.body-tail{display:none}
+    a.top-buttons{display:none}
+    a#menu{width:20%; display:block}
+    header.about{margin-left:5px; margin-right:5px}
+    span.body-span{margin-left:5px; margin-right:5px}
+    p.body{margin-left:5px; margin-right:5px;border-top-left-radius: 20px}
+    header.socials-header{margin-left:5px; margin-right:5px}
+    header.acads-header{margin-left:5px; margin-right:5px}
+    header.projects-header{margin-left:5px; margin-right:5px}
+    .\\projects-para\\{margin-left:5px; margin-right:5px}
+    .\\projects-header\\{margin-left:5px; margin-right:5px}
+    .cards-title{margin-left:5px; margin-right:5px}
+    div#cards-content{margin-left:5px; margin-right:5px; display:block}
+}
