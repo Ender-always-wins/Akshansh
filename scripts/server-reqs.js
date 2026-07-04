@@ -6,7 +6,13 @@ async function populateCard(type) {
    const cardContent =document.getElementById("cards-content");
    for (const card in json){
       const cardDiv = document.createElement("a");
-      cardDiv.classList.add("card");
+      cardDiv.classList.add("body");
+      cardDiv.style.maxWidth = "400px";
+      cardDiv.style.marginLeft = "0px";
+      cardDiv.style.marginBottom = "20px";
+      if (window.innerWidth < 800){
+      cardDiv.style.marginRight = "0px";}
+      else{cardDiv.style.marginRight = "50px";}
       cardDiv.href = `/Akshansh/content/index.html?type=${type}&name=${card}`;
       cardDiv.style.textDecoration = "none";
       cardDiv.style.color = "black";

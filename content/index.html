@@ -12,11 +12,13 @@
         <a class = "top-buttons" id = "back" style = "margin-right:100px;">
             Go back
         </a>
+        <hr>
     </nav>
     <div id = "parent" style = "display:flex;">
         <div id = "main"></div>
             <script>
             // fill the main div
+            let hr = document.createElement("hr");
             let params = new URLSearchParams(window.location.search);
             let type = params.get("type")
             document.getElementsByTagName("title")[0].textContent = params.get("name");
@@ -55,11 +57,13 @@
                     newElement.textContent = "Previous";
                     document.getElementById("nav").appendChild(newElement);
                 }
-
+                document.getElementById("nav").appendChild(hr);
                 let current = document.createElement("a");
                 current.classList.add("top-buttons");
                 current.textContent = contentName;
                 document.getElementById("nav").appendChild(current);
+
+                document.getElementById("nav").appendChild(hr);
 
                 if (index == Object.keys(namesJson).length) {
                     const newElement = document.createElement("a");
@@ -87,6 +91,7 @@
                     newElement.textContent = "Next";
                     document.getElementById("nav").appendChild(newElement);
                 }
+
             }
             addButtons();
         </script>
@@ -110,7 +115,8 @@
 
             }
         </script>
-        
+        <script src = "/Akshansh/scripts/mobile.js"></script>
+        <script>fixNav("content")</script>
     </div>
 </body>
 </html>
