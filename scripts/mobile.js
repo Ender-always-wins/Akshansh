@@ -6,6 +6,7 @@ function fixNav(page){
         if (page === "blog"){document.getElementById("blog").style.display = "block";}
         if (page === "writeups"){document.getElementById("writeups").style.display = "block";}
         if (page === "contact"){document.getElementById("contact").style.display = "block";}
+        if (page === "content"){document.getElementById("content").style.display = "block"}
     }
 }
 function showMore(page){

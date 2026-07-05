@@ -6,16 +6,22 @@
     <title></title>
     <link rel="icon" type="image/png" href="/Akshansh/images/coffee.png">
     <link rel = "stylesheet" href = "/Akshansh/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
 </head>
 <body>
-    <nav class = "top" id = "nav">
-        <a class = "top-buttons" id = "back" style = "margin-right:100px;">
-            Go back
-        </a>
-        <hr>
-    </nav>
-    <div id = "parent" style = "display:flex;">
+    <span class = "body-span" style = "align-items: center;position:sticky;top:0">
+        <nav class = "top" id = "nav" style="flex:1">
+            <a class = "top-buttons" id = "menu" onclick = "showMore('content')">+</a>
+            <a class = "top-buttons" id = "back">
+                Go back
+            </a>
+        </nav>
+        <button class = "theme-button"><i class="fa fa-moon-o" aria-hidden="true" style="font-size:30px" id ="theme-icon"></i></button>
+    </span>
+    <div id = "parent">
         <div id = "main"></div>
+            <script src = "/Akshansh/scripts/mobile.js"></script>
             <script>
             // fill the main div
             let hr = document.createElement("hr");
@@ -24,6 +30,7 @@
             document.getElementsByTagName("title")[0].textContent = params.get("name");
             document.getElementById("back").href = `/Akshansh/${type}.html`
             let contentName = params.get("name");
+            async function init(){
             async function addButtons(){
                 let res = await fetch(`https://akshansh-api.onrender.com?type=${type}&name=${contentName}`)
                 let data = await res.text()
@@ -61,9 +68,11 @@
                 let current = document.createElement("a");
                 current.classList.add("top-buttons");
                 current.textContent = contentName;
+                current.id = "content";
                 document.getElementById("nav").appendChild(current);
 
-                document.getElementById("nav").appendChild(hr);
+                let hr1 = document.createElement("hr")
+                document.getElementById("nav").appendChild(hr1);
 
                 if (index == Object.keys(namesJson).length) {
                     const newElement = document.createElement("a");
@@ -93,7 +102,9 @@
                 }
 
             }
-            addButtons();
+            await addButtons();
+            fixNav("content")}
+            init();
         </script>
         <script>
             if (type=="projects"){
@@ -115,8 +126,8 @@
 
             }
         </script>
-        <script src = "/Akshansh/scripts/mobile.js"></script>
-        <script>fixNav("content")</script>
+
+        <script src = "/Akshansh/scripts/theme.js"></script>
     </div>
 </body>
 </html>
