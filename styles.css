@@ -1,6 +1,18 @@
+:root{
+    --buttonColor: #4d3e42;
+    --buttonHoverColor: #453839;
+    --buttonTextColor: #000000;
+    --backgroundColor:#f2f0ef
+    --textBackgroundColor: rgba(255,255,255,0.6);
+    --textColor: #000000;
+    --shadowColor: rgba(0,0,0,0.3);
+    --navShadowColor: rgba(0,0,0,0.9);
+}
+
 body{
     margin:0px;
-    background-color: #F2F0EF;
+    background-color: var(--backgroundColor);
+    color:var(--textColor);
 }
 
 nav.top{
@@ -8,23 +20,21 @@ nav.top{
     position:sticky;
     top:20px;
     z-index:100;
-    background-color: #4d3e42;
-    margin:0px 40px;
-    margin-bottom:40px;
+    background-color: var(--buttonColor);
+    margin:40px 40px 40px 40px;
     border-radius:20px;
     -webkit-border-radius:20px;
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
-    box-shadow:0px 0px 90px 5px rgba(0,0,0,0.9);
+    box-shadow:0px 0px 90px 5px var(--navShadowColor);
     overflow:hidden;
 }
 
 a.top-buttons{
-    color:black;
+    color:var(--buttonTextColor);
     text-decoration: none;
     flex: 1;
-    height: 5%;
     font-size: 30px;
     text-align: center;
     padding: 15px;
@@ -32,7 +42,7 @@ a.top-buttons{
 }
 
 a.top-buttons:hover{
-    background-color: #453839;
+    background-color: var(--buttonHoverColor);
 }
 
 header{
@@ -54,78 +64,29 @@ span.body-span{
     font-size: 25px;
     padding: 10px;
     margin-left: 100px;
-    background-color:rgb(255,255,255,0.6);
+    background-color: var(--textBackgroundColor);
+    color:var(--textColor);
     border-radius:20px;
     -webkit-border-radius:20px;
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
     display:inline-block;
-    box-shadow:0px 0px 20px 5px rgba(0,0,0,0.3);
-}
-
-p.body-tail{
-    display:none;
-    height:10px;
-    width:10px;
-    border-radius:0px;
-    -webkit-border-radius:0px;
-    -moz-border-radius:0px;
-    -ms-border-radius:0px;
-    -o-border-radius:0px;
-    background-image: radial-gradient(circle at bottom left,#f2f0ef, #f2f0ef, 30px, transparent 30px)
-}
-
-
-ul.socials{
-    font-size: 25px;
-    max-width: 900px;
-    background-color:rgb(255,255,255,0.6);
-    border-radius:20px;
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    -ms-border-radius:20px;
-    -o-border-radius:20px;
-    border-top-left-radius: 0px;
-    display:inline-block;
+    box-shadow:0px 0px 20px 5px var(--shadowColor);
 }
 
 #coffee{
     display:flex;
 }
 
-ol.acads{
-    max-width: 900px;
-    font-size: 25px;
-    background-color:rgb(255,255,255,0.6);
-    border-radius:20px;
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    -ms-border-radius:20px;
-    -o-border-radius:20px;
-    border-top-left-radius: 0px;
-    display:inline-block;
-}
-
-
 a.social{
     font-size:25px;
     text-decoration: none;
-    color: #000000;
-}
-
-ul.socials{
-    list-style:none;
-    padding:5px;
-    max-width: 900px;
+    color: var(--textColor);
 }
 
 li.li-acad{
     padding:5px;
-}
-
-ul.reasons{
-    font-size:25px;
 }
 
 div#cards-content{
@@ -148,16 +109,18 @@ div#cards-content{
 }
 
 .\\projects-para\\{
-    margin-left:100px;
-    font-size:25px;
-    max-width:900px;
+    max-width: 900px;
+    font-size: 25px;
+    padding: 10px;
+    margin-left: 100px;
     background-color:rgb(255,255,255,0.6);
     border-radius:20px;
     -webkit-border-radius:20px;
     -moz-border-radius:20px;
     -ms-border-radius:20px;
     -o-border-radius:20px;
-    padding:10px;
+    display:inline-block;
+    box-shadow:0px 0px 20px 5px rgba(0,0,0,0.3);
 }
 
 #\\endpoints-list\\{
@@ -202,7 +165,7 @@ div#cards-content{
     left:0%;
     width:400px;
     height:100px;
-    background-color:#453839;
+    background-color:var(--buttonColor);
     z-index: 1;
     border-radius: 0px 0px 20px 20px;
     -webkit-border-radius: 0px 0px 20px 20px;
@@ -223,7 +186,20 @@ div#cards-content{
     display:none;
 }
 
-@media screen and (max-width:800px){
+.theme-button{
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background-color: var(--buttonColor);
+    color: var(--buttonTextColor);
+    -webkit-border-radius:50%;
+    -moz-border-radius:50%;
+    -ms-border-radius:50%;
+    -o-border-radius:50%;
+    margin-right:20px;
+}
+
+@media screen and (max-width:1000px){
     hr{display:none}
     p.body-tail{display:none}
     a.top-buttons{display:none}
@@ -238,4 +214,5 @@ div#cards-content{
     .\\projects-header\\{margin-left:5px; margin-right:5px}
     .cards-title{margin-left:5px; margin-right:5px}
     div#cards-content{margin-left:5px; margin-right:5px; display:block}
+    #socials-span{display:block}
 }

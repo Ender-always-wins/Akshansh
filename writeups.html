@@ -6,34 +6,38 @@
     <title>Write-ups</title>
     <link rel = "stylesheet" href = "styles.css">
     <link rel="icon" type="image/png" href="/Akshansh/images/coffee.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class = "top" >
-        <a class = "top-buttons" id = "menu" onclick = "showMore('writeups')"">+</a>
-        <a href = "index.html" class="top-buttons" id = "index">
-            Home
-        </a>
-        <hr>
-        <a href = "academics.html" class = "top-buttons" id = "academics">
-            Academics
-        </a>
-        <hr>
-        <a href = "projects.html" class = "top-buttons" id = "projects">
-            Projects
-        </a>
-        <hr>
-        <a href = "blogs.html" class = "top-buttons" id = "blog">
-            Blogs
-        </a>
-        <hr>
-        <a href = "writeups.html" class = "top-buttons" id = "writeups">
-            Write-ups
-        </a>
-        <hr>
-        <a href = "contact.html" class = "top-buttons" id = "contact">
-            Socials
-        </a>
-    </nav>
+    <span class = "body-span" style = "align-items: center;position:sticky;top:0">
+        <nav class = "top" style = "flex:1">
+            <a class = "top-buttons" id = "menu" onclick = "showMore('writeups')"">+</a>
+            <a href = "index.html" class="top-buttons" id = "index">
+                Home
+            </a>
+            <hr>
+            <a href = "academics.html" class = "top-buttons" id = "academics">
+                Academics
+            </a>
+            <hr>
+            <a href = "projects.html" class = "top-buttons" id = "projects">
+                Projects
+            </a>
+            <hr>
+            <a href = "blogs.html" class = "top-buttons" id = "blog">
+                Blogs
+            </a>
+            <hr>
+            <a href = "writeups.html" class = "top-buttons" id = "writeups">
+                Write-ups
+            </a>
+            <hr>
+            <a href = "contact.html" class = "top-buttons" id = "contact">
+                Socials
+            </a>
+        </nav>
+        <button class = "theme-button"><i class="fa fa-moon-o" aria-hidden="true" style="font-size:30px" id ="theme-icon"></i></button>
+    </span>
     <div class = "cards-container">
         <header class = "cards-title">My writeups to some CTFs and such :)</header>
         <div id = "cards-content">
@@ -46,5 +50,6 @@
     </script>
     <script src = "scripts/mobile.js"></script>
     <script>fixNav("writeups")</script>
+    <script src = "scripts/theme.js"></script>
 </body>
 </html>

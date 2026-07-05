@@ -1,5 +1,5 @@
 function fixNav(page){
-    if (window.innerWidth < 800){
+    if (window.innerWidth < 1000){
         if (page === "index"){document.getElementById("index").style.display = "block";}
         if (page === "academics"){document.getElementById("academics").style.display = "block";}
         if (page === "projects"){document.getElementById("projects").style.display = "block";}

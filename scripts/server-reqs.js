@@ -10,12 +10,15 @@ async function populateCard(type) {
       cardDiv.style.maxWidth = "400px";
       cardDiv.style.marginLeft = "0px";
       cardDiv.style.marginBottom = "20px";
-      if (window.innerWidth < 800){
+      cardDiv.style.height="280px";
+      cardDiv.style.flex = "1"
+      cardDiv.style.flexDirection = "column"
+      if (window.innerWidth < 1000){
       cardDiv.style.marginRight = "0px";}
       else{cardDiv.style.marginRight = "50px";}
       cardDiv.href = `/Akshansh/content/index.html?type=${type}&name=${card}`;
       cardDiv.style.textDecoration = "none";
-      cardDiv.style.color = "black";
+      cardDiv.style.color = document.documentElement.style.getPropertyValue("--textColor");
       if (json[card].length > 200) {
          json[card] = json[card].substring(0, 200) + "...";
       }

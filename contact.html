@@ -6,36 +6,39 @@
     <title>Contact me</title>
     <link rel = "stylesheet" href = "styles.css">
     <link rel="icon" type="image/png" href="/Akshansh/images/coffee.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class = "top" >
-        <a class = "top-buttons" id = "menu" onclick = "showMore('contact')">+</a>
-        <a href = "index.html" class="top-buttons" id = "index">
-            Home
-        </a>
-        <hr>
-        <a href = "academics.html" class = "top-buttons" id = "academics">
-            Academics
-        </a>
-        <hr>
-        <a href = "projects.html" class = "top-buttons" id = "projects">
-            Projects
-        </a>
-        <hr>
-        <a href = "blogs.html" class = "top-buttons" id = "blog">
-            Blogs
-        </a>
-        <hr>
-        <a href = "writeups.html" class = "top-buttons" id = "writeups">
-            Write-ups
-        </a>
-        <hr>
-        <a href = "contact.html" class = "top-buttons" id = "contact">
-            Socials
-        </a>
-        <hr>
-    </nav>
-    <span class = "body-span" >
+    <span class = "body-span" style = "align-items: center;position:sticky;top:0">
+        <nav class = "top" style = "flex:1">
+            <a class = "top-buttons" id = "menu" onclick = "showMore('contact')">+</a>
+            <a href = "index.html" class="top-buttons" id = "index">
+                Home
+            </a>
+            <hr>
+            <a href = "academics.html" class = "top-buttons" id = "academics">
+                Academics
+            </a>
+            <hr>
+            <a href = "projects.html" class = "top-buttons" id = "projects">
+                Projects
+            </a>
+            <hr>
+            <a href = "blogs.html" class = "top-buttons" id = "blog">
+                Blogs
+            </a>
+            <hr>
+            <a href = "writeups.html" class = "top-buttons" id = "writeups">
+                Write-ups
+            </a>
+            <hr>
+            <a href = "contact.html" class = "top-buttons" id = "contact">
+                Socials
+            </a>
+        </nav>
+        <button class = "theme-button"><i class="fa fa-moon-o" aria-hidden="true" style="font-size:30px" id ="theme-icon"></i></button>
+    </span>
+    <span class = "body-span" id = "socials-span" style = "justify-content: space-evenly;">
         <div>
             <header class = "socials-header">
                 Here's a list of my socials:
@@ -55,7 +58,7 @@
             </span>
         </div>
         <div>
-            <header class = "socials-header" style="margin:0;padding:0;margin-left:10px">
+            <header class = "socials-header" style="margin-left:10px">
                 Hit me up if:
             </header>
             <ul class = "body" style = "list-style-position: inside; margin-left:20px">
@@ -77,8 +80,8 @@
             </ul>
         </div>
         <div>
-            <header class = "socials-header" style="margin:0;padding:0;margin-left:10px">
-                Always up for
+            <header class = "socials-header" style="margin-left:10px">
+                Always up for:
             </header>
             <ul class = "body" style = "list-style-position: inside; margin-left:20px">
                 <li class = "reason">
@@ -105,5 +108,6 @@
     </script>
     <script src = "scripts/mobile.js"></script>
     <script>fixNav("contact")</script>
+    <script src = "scripts/theme.js"></script>
 </body>
 </html>
