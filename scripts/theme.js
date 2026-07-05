@@ -1,11 +1,5 @@
 let button = document.getElementsByClassName('theme-button')[0];
 
-if (sessionStorage.getItem('theme') === null){
-    console.log('hello')
-    sessionStorage.setItem("theme", "light")
-    console.log(sessionStorage.getItem("theme"))
-}
-
 if (sessionStorage.getItem('theme') === 'dark'){
     button.children[0].classList.toggle('fa-sun-o');
     button.children[0].classList.toggle('fa-moon-o');
@@ -21,6 +15,11 @@ if (sessionStorage.getItem('theme') === 'dark'){
 }
 
 button.addEventListener('click', function() {
+    if (sessionStorage.getItem('theme') == null){
+        console.log('hello')
+        sessionStorage.setItem("theme", "light")
+        console.log(sessionStorage.getItem("theme"))
+    }
     sessionStorage.setItem('theme', sessionStorage.getItem('theme') === 'light' ? 'dark' : 'light');
     console.log(sessionStorage.getItem('theme'));
     button.children[0].classList.toggle('fa-sun-o');
