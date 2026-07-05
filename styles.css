@@ -191,6 +191,7 @@ div#cards-content{
     height:60px;
     border-radius:50%;
     background-color: var(--buttonColor);
+    border:0;
     color: var(--buttonTextColor);
     -webkit-border-radius:50%;
     -moz-border-radius:50%;
