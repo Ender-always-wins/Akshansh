@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="icon" type="image/png" href="Akshansh/images/coffee.png">
-    <link rel = "stylesheet" href = "Akshansh/styles.css">
+    <link rel="icon" type="image/png" href="/Akshansh/images/coffee.png">
+    <link rel = "stylesheet" href = "/Akshansh/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -21,7 +21,7 @@
     </span>
     <div id = "parent">
         <div id = "main"></div>
-            <script src = "Akshansh/scripts/mobile.js"></script>
+            <script src = "/Akshansh/scripts/mobile.js"></script>
             <script>
             // fill the main div
             let hr = document.createElement("hr");
@@ -48,7 +48,7 @@
                                 lastContent = key;
                             }
                         }
-                        newElement.href = "Akshansh/content/index.html?type="+type+"&name="+lastContent;
+                        newElement.href = "/Akshansh/content/index.html?type="+type+"&name="+lastContent;
                         newElement.textContent = "Last";
                         document.getElementById("nav").appendChild(newElement);
                     }
@@ -61,7 +61,7 @@
                                 previousContent = key;
                             }
                         }
-                        newElement.href = "Akshansh/content/index.html?type="+type+"&name=" + previousContent;
+                        newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + previousContent;
                         newElement.textContent = "Previous";
                         document.getElementById("nav").appendChild(newElement);
                     }
@@ -84,7 +84,7 @@
                                 firstContent = key;
                             }
                         }
-                        newElement.href = "Akshansh/content/index.html?type="+type+"&name=" + firstContent;
+                        newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + firstContent;
                         newElement.textContent = "First";
                         document.getElementById("nav").appendChild(newElement);
                     }
@@ -97,7 +97,7 @@
                                 nextContent = key;
                             }
                         }
-                        newElement.href = "Akshansh/content/index.html?type="+type+"&name=" + nextContent;
+                        newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + nextContent;
                         newElement.textContent = "Next";
                         document.getElementById("nav").appendChild(newElement);
                     }
@@ -114,7 +114,7 @@
                     for (name in namesJson){
                         let elem = document.createElement("a")
                         elem.innerText = name
-                        elem.href = "Akshansh/content/index copy.html?type="+type+"&name="+name
+                        elem.href = "/Akshansh/content/index copy.html?type="+type+"&name="+name
                         elem.classList.add("top-buttons")
                         document.getElementById("nav").appendChild(elem)
                     }
@@ -124,7 +124,7 @@
             fixNav("content")}
             init();
         </script>
-        <script src = "Akshansh/scripts/theme.js"></script>
+        <script src = "/Akshansh/scripts/theme.js"></script>
     </div>
 </body>
 </html>
