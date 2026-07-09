@@ -132,47 +132,6 @@ div#cards-content{
     color: black;
 }
 
-#github-card{
-    width:400px;
-    height:400px;
-    margin-left:50px;
-    position:relative;
-    background-image: url("/Akshansh/images/stock editor.jpg");
-    border-radius:20px;
-    -webkit-border-radius:20px;
-    -moz-border-radius:20px;
-    -ms-border-radius:20px;
-    -o-border-radius:20px;
-    text-decoration: none;
-    color:black;
-    z-index:0;
-    margin-top: 100px;
-}
-
-#name{
-    position:absolute;
-    top: 5%;
-    left: 5%;
-    font-size: 40px;
-    z-index:1;
-    color: #ffffff;
-    text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
-}
-
-#brown-strip{
-    position:absolute;
-    bottom:0%;
-    left:0%;
-    width:400px;
-    height:100px;
-    background-color:var(--buttonColor);
-    z-index: 1;
-    border-radius: 0px 0px 20px 20px;
-    -webkit-border-radius: 0px 0px 20px 20px;
-    -moz-border-radius: 0px 0px 20px 20px;
-    -ms-border-radius: 0px 0px 20px 20px;
-    -o-border-radius: 0px 0px 20px 20px;
-}
 
 #github-projects{
     position: absolute;
@@ -218,7 +177,6 @@ div#cards-content{
     .cards-title{margin-left:5px; margin-right:5px}
     div#cards-content{margin-left:5px; margin-right:5px; display:block}
     #socials-span{display:block}
-    #parent{display:flex}
+    #parent{display:block}
     #back{margin:0}
-    #github-card{margin:0}
 }

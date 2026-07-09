@@ -15,6 +15,8 @@ function showMore(page){
         element.style.display="block"
     }
     document.getElementById("menu").textContent = "-"
+    if (window.innerWidth<1000 && page === "content"){document.getElementById("content").style.display="none";}
+
     document.getElementById("menu").setAttribute("onclick", `showLess("${page}")`)
 }
 
@@ -25,6 +27,7 @@ function showLess(page){
     }
     document.getElementById(page).style.display= "block"
     document.getElementById("menu").textContent = "+"
+    if (window.innerWidth<1000 && page === "content"){document.getElementById("content").style.display="block"}
     document.getElementById("menu").setAttribute("onclick", `showMore("${page}")`)
     document.getElementById("menu").style.display="block"
 }

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
-    <link rel="icon" type="image/png" href="/Akshansh/images/coffee.png">
-    <link rel = "stylesheet" href = "/Akshansh/styles.css">
+    <link rel="icon" type="image/png" href="Akshansh/images/coffee.png">
+    <link rel = "stylesheet" href = "Akshansh/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
@@ -21,113 +21,110 @@
     </span>
     <div id = "parent">
         <div id = "main"></div>
-            <script src = "/Akshansh/scripts/mobile.js"></script>
+            <script src = "Akshansh/scripts/mobile.js"></script>
             <script>
             // fill the main div
             let hr = document.createElement("hr");
             let params = new URLSearchParams(window.location.search);
             let type = params.get("type")
             document.getElementsByTagName("title")[0].textContent = params.get("name");
-            document.getElementById("back").href = `/Akshansh/${type}.html`
+            document.getElementById("back").href = `/${type}.html`
             let contentName = params.get("name");
             async function init(){
-            async function addButtons(){
-                let res = await fetch(`https://akshansh-api.onrender.com?type=${type}&name=${contentName}`)
-                let data = await res.text()
-                document.getElementById("main").innerHTML = data.replaceAll("\"","");
-                let names = await fetch("https://akshansh-api.onrender.com?type="+type+"&names=true");
-                let namesJson = await names.json();
-                let index= namesJson[contentName];
-                if (index == 1){
-                    const newElement = document.createElement("a");
-                    newElement.classList.add("top-buttons");
-                    let lastContent = "";
-                    for (var key in namesJson){
-                        if (namesJson[key] == Object.keys(namesJson).length){
-                            lastContent = key;
+                async function addButtons(){
+                    let res = await fetch(`https://akshansh-api.onrender.com?type=${type}&name=${contentName}`)
+                    let data = await res.text()
+                    document.getElementById("main").innerHTML = data.replaceAll("\"","");
+                    if (window.innerWidth>1000){
+                    let names = await fetch("https://akshansh-api.onrender.com?type="+type+"&names=true");
+                    let namesJson = await names.json();
+                    let index= namesJson[contentName];
+                    if (index == 1){
+                        const newElement = document.createElement("a");
+                        newElement.classList.add("top-buttons");
+                        let lastContent = "";
+                        for (var key in namesJson){
+                            if (namesJson[key] == Object.keys(namesJson).length){
+                                lastContent = key;
+                            }
                         }
+                        newElement.href = "Akshansh/content/index.html?type="+type+"&name="+lastContent;
+                        newElement.textContent = "Last";
+                        document.getElementById("nav").appendChild(newElement);
                     }
-                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name="+lastContent;
-                    newElement.textContent = "Last";
-                    document.getElementById("nav").appendChild(newElement);
-                }
-                else {
-                    const newElement = document.createElement("a");
-                    newElement.classList.add("top-buttons");
-                    let previousContent = "";
-                    for (var key in namesJson){
-                        if (namesJson[key] == index - 1){
-                            previousContent = key;
+                    else {
+                        const newElement = document.createElement("a");
+                        newElement.classList.add("top-buttons");
+                        let previousContent = "";
+                        for (var key in namesJson){
+                            if (namesJson[key] == index - 1){
+                                previousContent = key;
+                            }
                         }
+                        newElement.href = "Akshansh/content/index.html?type="+type+"&name=" + previousContent;
+                        newElement.textContent = "Previous";
+                        document.getElementById("nav").appendChild(newElement);
                     }
-                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + previousContent;
-                    newElement.textContent = "Previous";
-                    document.getElementById("nav").appendChild(newElement);
-                }
-                document.getElementById("nav").appendChild(hr);
-                let current = document.createElement("a");
-                current.classList.add("top-buttons");
-                current.textContent = contentName;
-                current.id = "content";
-                document.getElementById("nav").appendChild(current);
+                    document.getElementById("nav").appendChild(hr);
+                    let current = document.createElement("a");
+                    current.classList.add("top-buttons");
+                    current.textContent = contentName;
+                    current.id = "content";
+                    document.getElementById("nav").appendChild(current);
 
-                let hr1 = document.createElement("hr")
-                document.getElementById("nav").appendChild(hr1);
+                    let hr1 = document.createElement("hr")
+                    document.getElementById("nav").appendChild(hr1);
 
-                if (index == Object.keys(namesJson).length) {
-                    const newElement = document.createElement("a");
-                    newElement.classList.add("top-buttons");
-                    let firstContent = "";
-                    for (var key in namesJson){
-                        if (namesJson[key] == 1){
-                            firstContent = key;
+                    if (index == Object.keys(namesJson).length) {
+                        const newElement = document.createElement("a");
+                        newElement.classList.add("top-buttons");
+                        let firstContent = "";
+                        for (var key in namesJson){
+                            if (namesJson[key] == 1){
+                                firstContent = key;
+                            }
                         }
+                        newElement.href = "Akshansh/content/index.html?type="+type+"&name=" + firstContent;
+                        newElement.textContent = "First";
+                        document.getElementById("nav").appendChild(newElement);
                     }
-                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + firstContent;
-                    newElement.textContent = "First";
-                    document.getElementById("nav").appendChild(newElement);
-                }
-                else {
-                    const newElement = document.createElement("a");
-                    newElement.classList.add("top-buttons");
-                    let nextContent = "";
-                    for (var key in namesJson){
-                        if (namesJson[key] == index + 1){
-                            nextContent = key;
+                    else {
+                        const newElement = document.createElement("a");
+                        newElement.classList.add("top-buttons");
+                        let nextContent = "";
+                        for (var key in namesJson){
+                            if (namesJson[key] == index + 1){
+                                nextContent = key;
+                            }
                         }
+                        newElement.href = "Akshansh/content/index.html?type="+type+"&name=" + nextContent;
+                        newElement.textContent = "Next";
+                        document.getElementById("nav").appendChild(newElement);
                     }
-                    newElement.href = "/Akshansh/content/index.html?type="+type+"&name=" + nextContent;
-                    newElement.textContent = "Next";
-                    document.getElementById("nav").appendChild(newElement);
                 }
-
-            }
+                else{
+                    let current = document.createElement("a");
+                    current.classList.add("top-buttons");
+                    current.textContent = contentName;
+                    current.id = "content";
+                    document.getElementById("nav").appendChild(current);
+                    let names = await fetch(`https://akshansh-api.onrender.com/?type=${type}&names=true`)
+                    let namesJson = await names.json()
+                    console.log(namesJson)
+                    for (name in namesJson){
+                        let elem = document.createElement("a")
+                        elem.innerText = name
+                        elem.href = "Akshansh/content/index copy.html?type="+type+"&name="+name
+                        elem.classList.add("top-buttons")
+                        document.getElementById("nav").appendChild(elem)
+                    }
+                }
+                }
             await addButtons();
             fixNav("content")}
             init();
         </script>
-        <script>
-            if (type=="projects"){
-                let githubCard = document.createElement("a");
-                githubCard.id = "github-card";
-                githubCard.href = "https://github.com/Ender-always-wins/"+contentName
-                let projectName = document.createElement("div");
-                projectName.id = "name";
-                projectName.textContent = contentName
-                let brownStrip = document.createElement("div");
-                brownStrip.id = "brown-strip";
-                let img = document.createElement("img");
-                img.id = "github-projects";
-                img.src = "/Akshansh/images/github.png"
-                githubCard.appendChild(projectName)
-                githubCard.appendChild(brownStrip)
-                githubCard.appendChild(img)
-                document.getElementById("parent").appendChild(githubCard)
-
-            }
-        </script>
-
-        <script src = "/Akshansh/scripts/theme.js"></script>
+        <script src = "Akshansh/scripts/theme.js"></script>
     </div>
 </body>
 </html>
